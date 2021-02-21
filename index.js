@@ -15,8 +15,7 @@ const {
 } = require('ytsearcher');
 
 const searcher = new YTSearcher({
-    // key: "AIzaSyB5dwGEjKzq5QsI-KhXu1Sj5VNS92wKyLU", //ap
-    key: "AIzaSyCHCoriraWqP3K3wvbHaXJiaIoaAXDulBI", //messapp
+    key: process.env.youtube_api,
     revealed: true
 });
 
@@ -25,7 +24,7 @@ const lyrics = require("azlyrics-scraper");
 const client = new Discord.Client(),
     settings = {
         prefix: "dubu",
-        token: "Njk1NzE3NjAxNjA2NjMxNDU0.XoePgg.jMHkdwv6rIsM9pOGG5CJ0dFZXBY"
+        token: process.env.token
     };
 
 const queue = new Map();
