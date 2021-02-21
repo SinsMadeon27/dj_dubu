@@ -1,0 +1,39 @@
+const Discord = require("discord.js"),
+client = new Discord.Client(),
+settings = {
+    prefix: "dil",
+    token: "Njk1NzE3NjAxNjA2NjMxNDU0.XoePgg.jMHkdwv6rIsM9pOGG5CJ0dFZXBY"
+};
+
+const { Player } = require("discord-player");
+const player = new Player(client);
+client.player = player;
+client.player.on('trackStart', (message, track) => message.channel.send(`Now playing ${track.title}...`))
+
+client.on("ready", () => {
+    console.log("I'm ready !");
+});
+
+client.on("message", async (message) => {
+
+    const incoming = message.content.slice(settings.prefix.length +1).trim();
+    const args = message.content.slice(settings.prefix.length +1).split(/ +/g);
+    const isi = message.content.slice(settings.prefix.length +1).slice(args[1].length);
+    const command = args.shift().toLowerCase();
+
+    // console.log("incoming: "+incoming);        play twice cheer up
+    // console.log("args: "+args);                twice,cheer,up  
+    // console.log("isi: "+isi);                  twice cheer up
+    // console.log("command: "+command);          play
+
+    // !play Despacito
+    // will play "Despacito" in the member voice channel
+
+    if(command === "play"){
+      client.player.play(message, isi);
+      // as we registered the event above, no need to send a success message here
+    }
+
+});
+
+client.login(settings.token);

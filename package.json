@@ -1,0 +1,24 @@
+{
+  "name": "discord-bot",
+  "version": "2.7.11",
+  "description": "Just test lel",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "nothing"
+  },
+  "author": "ArtProject",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "azlyrics-scraper": "^1.0.6",
+    "discord-player": "^3.3.2",
+    "discord.js": "^12.5.1",
+    "ffmpeg-static": "^4.2.7",
+    "musixmatch": "^0.1.6",
+    "opusscript": "0.0.7",
+    "pm2": "^4.5.4",
+    "ytdl-core": "^4.5.0",
+    "ytsearcher": "^1.2.3"
+  }
+}
