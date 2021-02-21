@@ -40,7 +40,7 @@ client.on("ready", () => {
     // client.user.setActivity(`Build with Love by ${client.users.fetch('474267205446664202')}.`, {
     //     type: "STREAMING"
     // });
-    client.user.setActivity(`to ArtProject.id who build me with love.`, {
+    client.user.setActivity(`ArtProject.id who build me with love.`, {
         type: "LISTENING"
     });
 
