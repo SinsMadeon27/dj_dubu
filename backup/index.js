@@ -6,14 +6,14 @@ const ytdl    = require('ytdl-core');
 const { YTSearcher } = require('ytsearcher');
 
 const searcher = new YTSearcher({
-  key: "AIzaSyB5dwGEjKzq5QsI-KhXu1Sj5VNS92wKyLU",
+  key: process.env.youtube_api,
   revealed: true
 });
 
 const client = new Discord.Client(),
 settings = {
   prefix: "dil",
-  token: "Njk1NzE3NjAxNjA2NjMxNDU0.XoePgg.jMHkdwv6rIsM9pOGG5CJ0dFZXBY"
+  token: process.env.token
 };
 
 const queue = new Map();
